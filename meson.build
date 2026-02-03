@@ -14,7 +14,7 @@ dependencies = [
 
 sources = [
   'src/main.vala',
-  'src/file_children.vala'
+  'src/file_children.vala',
 ]
 
 ft_cloc = executable(
