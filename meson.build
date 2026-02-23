@@ -1,7 +1,7 @@
 project(
   'ft_cloc',
   'vala',
-  meson_version : '>= 1.0.0',
+  meson_version : '>= 0.63.0',
   version : '0.1',
   default_options : ['warning_level=2', 'optimization=3'],
   license : 'MIT'
@@ -14,8 +14,7 @@ dependencies = [
 ]
 
 sources = [
-  'src/main.vala',
-  'src/file_children.vala',
+  'src/ft_cloc.vala',
 ]
 
 ft_cloc = executable(
