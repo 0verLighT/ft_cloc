@@ -44,7 +44,6 @@ class MyApplication {
 	private void init_language() {
 		this.lang = new HashTable<string, string>(str_hash, str_equal);
 
-		this.lang["meson.build"] = "Meson";
 		this.lang["c"] = "C";
 		this.lang["h"] = "Header (.h)";
 		this.lang["vala"] = "Vala";
@@ -53,7 +52,11 @@ class MyApplication {
 		this.lang["ts"] = "Typescript";
 		this.lang["cpp"] = "C++";
 		this.lang["hpp"] = "C++";
+		this.lang["nix"] = "Nix";
+		this.lang["yml"] = "YAML";
+		this.lang["json"] = "JSON";
 		this.lang["makefile"] = "Makefile";
+		this.lang["meson.build"] = "Meson";
 	}
 
 	public MyApplication(string dir_work) {
@@ -73,7 +76,7 @@ class MyApplication {
 Language        Files      Blank      Comment    Code
 ----------------------------------------------------------------------
 """);
-		foreach (LangFile langfile in hash_lang.get_values()) {
+		foreach (unowned LangFile langfile in hash_lang.get_values()) {
 			langfile.print_stats();
 		}
 		print("----------------------------------------------------------------------\n");
@@ -97,8 +100,8 @@ Language        Files      Blank      Comment    Code
 				list_children(child);
 			} else {
 				string? format_name = null;
-				string	lower_name = name.ascii_down();
-				if (this.lang.contains(lower_name)) {
+				string	lower_name = name.down();
+				if (lower_name in this.lang) {
 					format_name = this.lang[lower_name];
 				}
 				else if ("." in name) {
