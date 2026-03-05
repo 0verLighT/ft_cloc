@@ -3,3 +3,5 @@ builddir
 .vscode
 test
 usr
+subprojects
+.direnv

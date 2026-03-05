@@ -57,6 +57,33 @@ class MyApplication {
 		this.lang["json"] = "JSON";
 		this.lang["makefile"] = "Makefile";
 		this.lang["meson.build"] = "Meson";
+		this.lang["html"] = "HTML";
+		this.lang["css"] = "CSS";
+		this.lang["scss"] = "Sass/SCSS";
+		this.lang["php"] = "PHP";
+		this.lang["jsx"] = "React (JSX)";
+		this.lang["tsx"] = "React (TSX)";
+		this.lang["vue"] = "Vue.js";
+		this.lang["rs"] = "Rust";
+		this.lang["go"] = "Go";
+		this.lang["java"] = "Java";
+		this.lang["cs"] = "C#";
+		this.lang["rb"] = "Ruby";
+		this.lang["swift"] = "Swift";
+		this.lang["kt"] = "Kotlin";
+		this.lang["dart"] = "Dart";
+		this.lang["sh"] = "Shell (Bash)";
+		this.lang["bash"] = "Shell (Bash)";
+		this.lang["ps1"] = "PowerShell";
+		this.lang["pl"] = "Perl";
+		this.lang["lua"] = "Lua";
+		this.lang["md"] = "Markdown";
+		this.lang["toml"] = "TOML";
+		this.lang["xml"] = "XML";
+		this.lang["sql"] = "SQL";
+		this.lang["ini"] = "Configuration (INI)";
+		this.lang["conf"] = "Configuration";
+		this.lang["dockerfile"] = "Docker";
 	}
 
 	public MyApplication(string dir_work) {
