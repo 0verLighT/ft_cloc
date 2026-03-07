@@ -7,15 +7,25 @@ project(
   license : 'MIT'
 )
 
+conf_data = configuration_data()
+conf_data.set('VERSION', meson.project_version())
+version_file = configure_file(
+  input: 'version.vala.in',
+  output: 'version.vala',
+  configuration: conf_data,
+)
+
 dependencies = [
   dependency('glib-2.0'),
   dependency('gobject-2.0'),
   dependency('gio-2.0'),
 ]
 
-sources = [
+sources = files(
   'src/ft_cloc.vala',
-]
+)
+
+sources += version_file
 
 ft_cloc = executable(
   'ft_cloc',

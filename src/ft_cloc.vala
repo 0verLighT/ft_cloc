@@ -1,3 +1,5 @@
+using Config;
+
 public class LangFile {
 	public string language;
 	private int files = 0;
@@ -155,6 +157,11 @@ int	main(string[] args)
 	{
 		print("ft_cloc <dir> or <file>\n");
 		return (1);
+	}
+	if (args[1] == "-v" || args[1] == "--version")
+	{
+		print("ft_cloc version : %s\n", Config.PROJECT_VERSION);
+		return (0);
 	}
 	var app = new MyApplication(args[1]);
 	app.print_all();
