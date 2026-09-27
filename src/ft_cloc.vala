@@ -2,10 +2,11 @@ using Config;
 
 public class LangFile {
 	public string language;
-	private int files = 0;
-	private int blank = 0;
-	private int comment = 0;
-	private int code = 0;
+
+	public int files {get; private set; default = 0;} 
+	public int blank {get; private set; default = 0;} 
+	public int comment {get; private set; default = 0;} 
+	public int code {get; private set; default = 0;} 
 
 	public LangFile(string name) {
 		this.language = name;
@@ -105,10 +106,19 @@ class MyApplication {
 Language        Files      Blank      Comment    Code
 ----------------------------------------------------------------------
 """);
+		int total_files = 0;
+		int total_blank = 0;
+		int total_comment = 0;
+		int total_code = 0;
 		foreach (unowned LangFile langfile in hash_lang.get_values()) {
 			langfile.print_stats();
+			total_files += langfile.files;
+			total_blank += langfile.blank;
+			total_comment += langfile.comment;
+			total_code += langfile.code;
 		}
 		print("----------------------------------------------------------------------\n");
+		print("%-15s %-10d %-10d %-10d %-10d\n", "Total", total_files, total_blank, total_comment, total_code);
 	}
 
 	private void list_children(File dir) throws Error {
