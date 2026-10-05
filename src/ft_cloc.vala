@@ -41,7 +41,7 @@ public class LangFile {
 	}
 }
 
-class MyApplication {
+class Cloc {
 	private HashTable<string, string> lang;
 	private HashTable<string, LangFile> hash_lang;
 	private void init_language() {
@@ -131,7 +131,7 @@ class MyApplication {
 		this.lang["zsh"] = "Shell (Zsh)";
 	}
 
-	public MyApplication(string dir_work) {
+	public Cloc(string dir_work) {
 		this.hash_lang = new HashTable<string, LangFile>(str_hash, str_equal);
 		this.init_language();
 		File root = File.new_for_commandline_arg(dir_work);
@@ -212,7 +212,7 @@ int	main(string[] args) {
 		print("ft_cloc version : %s\n", Config.PROJECT_VERSION);
 		return (0);
 	}
-	var app = new MyApplication(args[1]);
+	var app = new Cloc(args[1]);
 	app.print_all();
 	return (0);
 }
