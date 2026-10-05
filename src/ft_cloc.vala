@@ -75,7 +75,7 @@ class MyApplication {
 		this.lang["groovy"] = "Groovy";
 		this.lang["h"] = "Header (.h)";
 		this.lang["hh"] = "C++ (Header)";
-		this.lang["hpp"] = "C++";
+		this.lang["hpp"] = "C++ (Header)";
 		this.lang["hs"] = "Haskell";
 		this.lang["html"] = "HTML";
 		this.lang["hxx"] = "C++ (Header)";
@@ -193,15 +193,12 @@ Language        Files      Blank      Comment    Code
 }
 
 
-int	main(string[] args)
-{
-	if (args.length != 2)
-	{
+int	main(string[] args) {
+	if (args.length != 2) {
 		print("ft_cloc <dir> or <file>\n");
 		return (1);
 	}
-	if (args[1] == "-v" || args[1] == "--version")
-	{
+	if (args[1] == "-v" || args[1] == "--version") {
 		print("ft_cloc version : %s\n", Config.PROJECT_VERSION);
 		return (0);
 	}
