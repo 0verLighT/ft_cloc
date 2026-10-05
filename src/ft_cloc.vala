@@ -47,46 +47,88 @@ class MyApplication {
 	private void init_language() {
 		this.lang = new HashTable<string, string>(str_hash, str_equal);
 
-		this.lang["c"] = "C";
-		this.lang["h"] = "Header (.h)";
-		this.lang["vala"] = "Vala";
-		this.lang["py"] = "Python";
-		this.lang["js"] = "Javascript";
-		this.lang["ts"] = "Typescript";
-		this.lang["cpp"] = "C++";
-		this.lang["hpp"] = "C++";
-		this.lang["nix"] = "Nix";
-		this.lang["yml"] = "YAML";
-		this.lang["json"] = "JSON";
-		this.lang["makefile"] = "Makefile";
-		this.lang["meson.build"] = "Meson";
-		this.lang["html"] = "HTML";
-		this.lang["css"] = "CSS";
-		this.lang["scss"] = "Sass/SCSS";
-		this.lang["php"] = "PHP";
-		this.lang["jsx"] = "React (JSX)";
-		this.lang["tsx"] = "React (TSX)";
-		this.lang["vue"] = "Vue.js";
-		this.lang["rs"] = "Rust";
-		this.lang["go"] = "Go";
-		this.lang["java"] = "Java";
-		this.lang["cs"] = "C#";
-		this.lang["rb"] = "Ruby";
-		this.lang["swift"] = "Swift";
-		this.lang["kt"] = "Kotlin";
-		this.lang["dart"] = "Dart";
-		this.lang["sh"] = "Shell (Bash)";
+		this.lang["asm"] = "Assembly";
+		this.lang["astro"] = "Astro";
 		this.lang["bash"] = "Shell (Bash)";
-		this.lang["ps1"] = "PowerShell";
-		this.lang["pl"] = "Perl";
-		this.lang["lua"] = "Lua";
-		this.lang["md"] = "Markdown";
-		this.lang["toml"] = "TOML";
-		this.lang["xml"] = "XML";
-		this.lang["sql"] = "SQL";
-		this.lang["ini"] = "Configuration (INI)";
+		this.lang["blp"] = "BluePrint";
+		this.lang["c"] = "C";
+		this.lang["cc"] = "C++";
+		this.lang["clj"] = "Clojure";
+		this.lang["cmake"] = "CMake";
 		this.lang["conf"] = "Configuration";
+		this.lang["cpp"] = "C++";
+		this.lang["cr"] = "Crystal";
+		this.lang["cs"] = "C#";
+		this.lang["css"] = "CSS";
+		this.lang["cxx"] = "C++";
+		this.lang["d"] = "D";
+		this.lang["dart"] = "Dart";
 		this.lang["dockerfile"] = "Docker";
+		this.lang["elm"] = "Elm";
+		this.lang["erl"] = "Erlang";
+		this.lang["ex"] = "Elixir";
+		this.lang["exs"] = "Elixir (Script)";
+		this.lang["fs"] = "F#";
+		this.lang["gd"] = "GDScript";
+		this.lang["go"] = "Go";
+		this.lang["gql"] = "GraphQL";
+		this.lang["graphql"] = "GraphQL";
+		this.lang["groovy"] = "Groovy";
+		this.lang["h"] = "Header (.h)";
+		this.lang["hh"] = "C++ (Header)";
+		this.lang["hpp"] = "C++ (Header)";
+		this.lang["hs"] = "Haskell";
+		this.lang["html"] = "HTML";
+		this.lang["hxx"] = "C++ (Header)";
+		this.lang["ini"] = "Configuration (INI)";
+		this.lang["java"] = "Java";
+		this.lang["jl"] = "Julia";
+		this.lang["js"] = "Javascript";
+		this.lang["json"] = "JSON";
+		this.lang["jsx"] = "React (JSX)";
+		this.lang["kt"] = "Kotlin";
+		this.lang["kts"] = "Kotlin (Script)";
+		this.lang["less"] = "Less";
+		this.lang["lisp"] = "Lisp";
+		this.lang["lua"] = "Lua";
+		this.lang["m"] = "Objective-C";
+		this.lang["makefile"] = "Makefile";
+		this.lang["md"] = "Markdown";
+		this.lang["meson.build"] = "Meson";
+		this.lang["mm"] = "Objective-C++";
+		this.lang["nim"] = "Nim";
+		this.lang["ninja"] = "Ninja";
+		this.lang["nix"] = "Nix";
+		this.lang["ocaml"] = "OCaml";
+		this.lang["p"] = "Pascal";
+		this.lang["php"] = "PHP";
+		this.lang["pl"] = "Perl";
+		this.lang["ps1"] = "PowerShell";
+		this.lang["py"] = "Python";
+		this.lang["r"] = "R";
+		this.lang["rb"] = "Ruby";
+		this.lang["rs"] = "Rust";
+		this.lang["sass"] = "Sass";
+		this.lang["scala"] = "Scala";
+		this.lang["scss"] = "Sass/SCSS";
+		this.lang["sh"] = "Shell (Bash)";
+		this.lang["sol"] = "Solidity";
+		this.lang["sql"] = "SQL";
+		this.lang["svelte"] = "Svelte";
+		this.lang["swift"] = "Swift";
+		this.lang["toml"] = "TOML";
+		this.lang["ts"] = "Typescript";
+		this.lang["tsx"] = "React (TSX)";
+		this.lang["vala"] = "Vala";
+		this.lang["vapi"] = "Vala (Header)";
+		this.lang["vim"] = "Vim";
+		this.lang["vue"] = "Vue.js";
+		this.lang["wasm"] = "WebAssembly";
+		this.lang["xml"] = "XML";
+		this.lang["yaml"] = "YAML";
+		this.lang["yml"] = "YAML";
+		this.lang["zig"] = "Zig";
+		this.lang["zsh"] = "Shell (Zsh)";
 	}
 
 	public MyApplication(string dir_work) {
@@ -161,15 +203,12 @@ Language        Files      Blank      Comment    Code
 }
 
 
-int	main(string[] args)
-{
-	if (args.length != 2)
-	{
+int	main(string[] args) {
+	if (args.length != 2) {
 		print("ft_cloc <dir> or <file>\n");
 		return (1);
 	}
-	if (args[1] == "-v" || args[1] == "--version")
-	{
+	if (args[1] == "-v" || args[1] == "--version") {
 		print("ft_cloc version : %s\n", Config.PROJECT_VERSION);
 		return (0);
 	}
